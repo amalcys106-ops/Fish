@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة الثروة السمكية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎮 لعبة الثروة السمكية 🎮</h1>
+            <p class="subtitle">اختبر معلوماتك وحقق أعلى النقاط!</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="index.html" class="nav-link">المعلومات</a>
+            <a href="game.html" class="nav-link active">اللعبة</a>
+        </nav>
+
+        <!-- Main Game Content -->
+        <main class="game-main">
+            <!-- Score Display -->
+            <div class="score-display">
+                <div class="score-item">
+                    <span class="score-label">النقاط:</span>
+                    <span class="score-value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">المرحلة:</span>
+                    <span class="score-value" id="stage">1</span>
+                </div>
+            </div>
+
+            <!-- Game Container -->
+            <div class="game-container">
+                <!-- Stage 1: Match Fish Names -->
+                <div class="stage" id="stage1">
+                    <h2>المرحلة الأولى: تطابق أسماء الأسماك 🐠</h2>
+                    <p class="stage-description">اختر اسم السمكة الصحيح من بين الخيارات</p>
+                    
+                    <div class="game-content">
+                        <div class="fish-image-container">
+                            <img id="fishImage" src="" alt="سمكة">
+                        </div>
+                        
+                        <div class="options-container">
+                            <button class="option-btn" onclick="checkFishAnswer(this)"></button>
+                            <button class="option-btn" onclick="checkFishAnswer(this)"></button>
+                            <button class="option-btn" onclick="checkFishAnswer(this)"></button>
+                            <button class="option-btn" onclick="checkFishAnswer(this)"></button>
+                        </div>
+                    </div>
+
+                    <div class="feedback" id="feedback1"></div>
+                    <button class="next-btn" id="nextBtn1" onclick="nextFish()" style="display:none;">السؤال التالي →</button>
+                </div>
+
+                <!-- Stage 2: Identify Fishing Tools -->
+                <div class="stage" id="stage2" style="display:none;">
+                    <h2>المرحلة الثانية: تحديد أدوات الصيد 🎣</h2>
+                    <p class="stage-description">اختر اسم أداة الصيد الصحيحة</p>
+                    
+                    <div class="game-content">
+                        <div class="tool-image-container">
+                            <img id="toolImage" src="" alt="أداة صيد">
+                        </div>
+                        
+                        <div class="options-container">
+                            <button class="option-btn" onclick="checkToolAnswer(this)"></button>
+                            <button class="option-btn" onclick="checkToolAnswer(this)"></button>
+                        </div>
+                    </div>
+
+                    <div class="feedback" id="feedback2"></div>
+                    <button class="next-btn" id="nextBtn2" onclick="nextTool()" style="display:none;">السؤال التالي →</button>
+                </div>
+
+                <!-- Stage 3: Protection Questions -->
+                <div class="stage" id="stage3" style="display:none;">
+                    <h2>المرحلة الثالثة: حماية الثروة السمكية 🛡️</h2>
+                    <p class="stage-description">أجب على الأسئلة بنعم أو لا</p>
+                    
+                    <div class="game-content">
+                        <div class="question-container">
+                            <p id="questionText" class="question-text"></p>
+                        </div>
+                        
+                        <div class="yes-no-container">
+                            <button class="yes-no-btn yes-btn" onclick="checkProtectionAnswer(true)">نعم ✓</button>
+                            <button class="yes-no-btn no-btn" onclick="checkProtectionAnswer(false)">لا ✗</button>
+                        </div>
+                    </div>
+
+                    <div class="feedback" id="feedback3"></div>
+                    <button class="next-btn" id="nextBtn3" onclick="nextQuestion()" style="display:none;">السؤال التالي →</button>
+                </div>
+
+                <!-- Game Over Screen -->
+                <div class="stage" id="gameOver" style="display:none;">
+                    <div class="game-over-content">
+                        <h2>🎉 انتهت اللعبة! 🎉</h2>
+                        <div class="final-score">
+                            <p>نقاطك النهائية:</p>
+                            <div class="score-big" id="finalScore">0</div>
+                        </div>
+                        <div class="message" id="gameOverMessage"></div>
+                        <button class="restart-btn" onclick="restartGame()">العب مرة أخرى 🔄</button>
+                        <a href="index.html" class="back-link">العودة للمعلومات ←</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 لعبة الثروة السمكية التفاعلية - تعليم ممتع للأطفال</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
